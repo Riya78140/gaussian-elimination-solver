@@ -1,6 +1,6 @@
 {
   "name": "gaussian-elimination-solver",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Solves systems of linear equations and computes matrix ranks via partial pivoting Gaussian elimination.",
   "type": "module",
   "main": "src/index.js",
