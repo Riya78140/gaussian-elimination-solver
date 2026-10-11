@@ -31,3 +31,10 @@ A small, dependency-free routine for exact-size linear systems where you want to
 - Singular systems (rank-deficient coefficient matrix) are reported, not solved. The library does not attempt least-squares or minimum-norm solutions.
 - Inputs are validated: ragged matrices, non-finite entries, and mismatched `b` lengths throw. Empty inputs are treated as a `0x0` system yielding an empty solution.
 - Results are floating point; compare with a tolerance, not `===`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
